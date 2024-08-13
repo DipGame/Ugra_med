@@ -1,0 +1,240 @@
+* {
+	box-sizing: border-box !important;
+	background-repeat: no-repeat !important;
+	word-break: break-word !important;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	// overflow-y: scroll;
+	font-family: Noto Serif;
+	// position: relative;
+}
+
+div,
+li,
+p,
+a,
+span,
+section,
+button {
+	font-family: Golos;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: left;
+	color: #18181A;
+}
+
+h1,
+h2 {
+	font-family: Golos;
+	font-size: 50px;
+	font-weight: 500;
+	line-height: 60px;
+	text-align: left;
+	color: #18181A;
+	word-wrap: break-word;
+}
+
+@media (max-width: 600px) {
+
+	h1,
+	h2 {
+		font-family: Noto Serif;
+		font-size: 34px;
+		font-weight: 600;
+		line-height: 56px;
+		text-align: left;
+	}
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: Golos;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22.4px;
+	text-align: left;
+	color: #18181A;
+}
+
+a {
+	text-decoration: none;
+	transition: .5s;
+	cursor: pointer;
+}
+
+a:hover {
+	color: #4F963E;
+}
+
+.padding {
+	padding: 0 15px
+}
+
+main {
+	padding: 0;
+	margin: 0;
+}
+
+.padding {
+	padding: 0 15px;
+}
+
+.flex {
+	display: flex;
+}
+
+.smooth {
+	transition: .5s;
+}
+
+.smooth:hover {
+	transition: .5s;
+}
+
+.def_div {
+	width: 100%;
+	max-width: 1290px;
+	margin: 0 auto;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	padding: 0 30px;
+	height: 50px;
+	align-items: center;
+	color: #111827;
+	transition: all .5s;
+	cursor: pointer;
+	font-family: Golos;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19.2px;
+	text-align: center;
+	border: 1px solid #4F963E;
+	background-color: #4F963E;
+	border-radius: 10px;
+	color: #FFF;
+}
+
+.button:hover {
+	background-color: #fff;
+	color: #4F963E !important;
+	transition: all .5s;
+	border: 1px solid #4F963E;
+}
+
+.invise {
+	display: none !important;
+	height: 0 !important; 
+	width: 0 !important;
+}
+
+.default {
+	width: 100%;
+	max-width: 1290px;
+	margin: 0 auto 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.default h3 {
+	font-family: Golos;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 42px;
+	text-align: left;
+}
+
+.default a {
+	color: #4F963E;
+	text-decoration: underline;
+	display: inline-block;
+	font-family: Golos;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 25.2px;
+	text-align: left;
+}
+
+.default p {
+	font-family: Golos;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 25.2px;
+	text-align: left;
+}
+
+.default ul {
+	list-style-position: inside;
+	padding-left: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.default ol {
+	list-style-position: inside;
+	padding-left: 0;
+}
+
+.default ul li {
+	list-style: disc;
+	font-family: Golos;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 25.2px;
+	text-align: left;
+}
+
+.default ul li::marker {
+	color: #4F963E;
+}
+
+.default table {
+	width: 100%;
+}
+
+.default caption {
+	border-bottom: none;
+	background-color: #908ea3;
+}
+
+.default thead th {
+	background-color: #908ea3;
+}
+
+.default tbody td {
+	background-color: #d4d4da;
+	text-align: center;
+}
+
+@media (max-width: 550px) {
+	.default h3 {
+		font-family: Golos;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 33.6px;
+		text-align: left;
+	}
+
+	.default ul li,
+	.default p,
+	.default a {
+		font-family: Golos;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 22.4px;
+		text-align: left;
+	}
+}
