@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             svgBurger.forEach(element => {
                 element.addEventListener('click', () => {
                     toggleClass(document.querySelector('.bottom_header_container'), 'open');
+                    toggleClass(document.querySelector('body'), 'no-scroll');
                     svgBurger.forEach(el => {
                        
                         toggleClass(el, 'invise');
