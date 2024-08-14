@@ -237,6 +237,7 @@ header .contacts_cont {
 
     .search.open {
         .search_rez {
+            top: 100%;
             transition: .5s;
             opacity: 1;
             visibility: visible;
