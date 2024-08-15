@@ -11,7 +11,7 @@ html {
 body {
 	overflow-x: hidden;
 	// overflow-y: scroll;
-	font-family: Noto Serif;
+	font-family: Golos;
 	// position: relative;
 }
 
@@ -49,11 +49,12 @@ h2 {
 
 	h1,
 	h2 {
-		font-family: Noto Serif;
-		font-size: 34px;
-		font-weight: 600;
-		line-height: 56px;
+		font-family: Golos;
+		font-size: 40px;
+		font-weight: 500;
+		line-height: 48px;
 		text-align: left;
+
 	}
 }
 
@@ -96,6 +97,10 @@ main {
 	display: flex;
 }
 
+.flex-direct {
+	flex-direction: column;
+}
+
 .smooth {
 	transition: .5s;
 }
@@ -124,22 +129,87 @@ main {
 	font-weight: 600;
 	line-height: 19.2px;
 	text-align: center;
-	border: 1px solid #4F963E;
 	background-color: #4F963E;
 	border-radius: 10px;
 	color: #FFF;
 }
 
 .button:hover {
-	background-color: #fff;
-	color: #4F963E !important;
+	background-color: #51AE3B;
+	color: #FFF !important;
 	transition: all .5s;
+}
+
+.button:disabled {
+	border: none;
+	background-color: #F4F6F9;
+	color: #A1A1A9 !important;
+	cursor: default;
+}
+
+.button_2 {
+	background: none;
+	color: #4F963E !important;
 	border: 1px solid #4F963E;
+	max-width: 265px;
+	display: flex;
+	gap: 10px;
+
+	svg path {
+		transition: .5s;
+	}
+}
+.button_2:hover {
+	background: #51AE3B;
+	color: #FFF !important;
+	border: 1px solid #4F963E;
+
+	svg path {
+		transition: .5s;
+		stroke: #FFF;
+	}
+}
+
+.button:disabled:hover {
+	border: none;
+	background-color: #F4F6F9;
+	color: #A1A1A9;
+}
+
+.btn-sw-prev,
+.btn-sw-next {
+	position: absolute;
+	fill: #FFF;
+	top: 58%;
+	z-index: 9;
+	left: -70px;
+	cursor: pointer;
+	transition: .5s;
+
+	path {
+		transition: .5s;
+	}
+}
+
+.btn-sw-prev:hover,
+.btn-sw-next:hover {
+	transition: .5s;
+	fill: #4F963E;
+
+	path {
+		transition: .5s;
+		stroke: #FFF;
+	}
+}
+
+.btn-sw-next {
+	left: auto;
+	right: -70px;
 }
 
 .invise {
 	display: none !important;
-	height: 0 !important; 
+	height: 0 !important;
 	width: 0 !important;
 }
 
@@ -149,15 +219,16 @@ main {
 	margin: 0 auto 50px;
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: 20px;
 }
 
 .default h3 {
 	font-family: Golos;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 500;
-	line-height: 42px;
+	line-height: 28.8px;
 	text-align: left;
+
 }
 
 .default a {
@@ -165,18 +236,20 @@ main {
 	text-decoration: underline;
 	display: inline-block;
 	font-family: Golos;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
-	line-height: 25.2px;
+	line-height: 22.4px;
 	text-align: left;
+
 }
 
 .default p {
 	font-family: Golos;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
-	line-height: 25.2px;
+	line-height: 22.4px;
 	text-align: left;
+
 }
 
 .default ul {
@@ -184,25 +257,37 @@ main {
 	padding-left: 1.2rem;
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 5px;
 }
 
 .default ol {
 	list-style-position: inside;
+	padding-left: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	padding-left: 0;
+}
+
+.default ol li {
+	font-family: Golos;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22.4px;
+	text-align: left;
 }
 
 .default ul li {
 	list-style: disc;
 	font-family: Golos;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
-	line-height: 25.2px;
+	line-height: 22.4px;
 	text-align: left;
 }
 
 .default ul li::marker {
-	color: #4F963E;
+	color: #18181A;
 }
 
 .default table {
@@ -228,11 +313,12 @@ main {
 		font-family: Golos;
 		font-size: 24px;
 		font-weight: 500;
-		line-height: 33.6px;
+		line-height: 28.8px;
 		text-align: left;
 	}
 
 	.default ul li,
+	.default ol li,
 	.default p,
 	.default a {
 		font-family: Golos;

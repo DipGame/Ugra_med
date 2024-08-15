@@ -1,0 +1,195 @@
+.deskForm {
+    width: 100%;
+    background-position: 90% 100%;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.deskForm__container {
+    background-color: #F4F6F9;
+    padding: 60px 15px;
+    z-index: 2;
+    position: relative;
+
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        z-index: -1;
+        width: 630px;
+        height: 530px;
+        // object-fit: contain;
+    }
+
+    @media (min-width: 1921px) {
+        img {
+            bottom: 0;
+            right: auto;
+            left: 50%;
+            // object-fit: contain;
+        }
+    }
+
+    .cont {
+
+        h2 {
+            font-family: Golos;
+            font-size: 50px;
+            font-weight: 500;
+            line-height: 60px;
+            text-align: left;
+            color: #4F963E;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-family: Golos;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 25.2px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .inputs_cont {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 740px;
+
+            .input_cont {
+                width: 100%;
+                // overflow: hidden;
+
+                position: relative;
+
+                input {
+                    border: 1px solid #E2E6EB;
+                    border-radius: 10px;
+                }
+
+                span {
+                    font-family: Golos;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 16.8px;
+                    text-align: left;
+                    color: #EE4444;
+                    position: absolute;
+                    margin-bottom: 0;
+                    top: 100%;
+                    transform: translateY(20%);
+                    display: none;
+                }
+            }
+
+            .input_cont.err {
+
+                input {
+                    border: 1px solid #EE4444;
+                }
+
+                input::placeholder {
+                    color: #EE4444;
+                }
+
+                span {
+                    display: block;
+                }
+            }
+
+            input {
+                width: 100%;
+                // max-width: 50%;
+                background-color: #FFF;
+                height: 60px;
+                padding: 0 20px;
+                font-family: Golos;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 19.2px;
+                text-align: left;
+
+            }
+
+            input::placeholder {
+                color: #A1A1A9;
+            }
+        }
+
+        span {
+            font-family: Golos;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 19.6px;
+            text-align: left;
+            margin-bottom: 20px;
+            display: block;
+
+            a {
+                font-family: Golos;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 19.6px;
+                text-align: left;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 1390px) {
+    .deskForm__container img {
+        right: 0;
+    }
+}
+
+@media (max-width: 1187px) {
+    .deskForm__container img {
+        right: -245px;
+
+    }
+}
+
+@media (max-width: 950px) {
+
+    .deskForm__container .cont h2,
+    .deskForm__container .cont span {
+        max-width: 500px;
+    }
+
+    .deskForm__container .cont .inputs_cont {
+        flex-direction: column;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 630px) {
+    .deskForm {
+        padding-top: 0;
+        background-position: 100% 100%;
+    }
+
+    .deskForm__container {
+        padding-bottom: 190px;
+    }
+
+    .deskForm__container img {
+        width: 336px;
+        height: auto;
+        right: -100px;
+    }
+}
+
+@media (max-width: 450px) {
+    .deskForm__container .cont h2 {
+        font-family: Golos;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 48px;
+        text-align: left;
+    }
+}

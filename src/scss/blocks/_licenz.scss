@@ -1,0 +1,62 @@
+.licenz {
+    background-color: #F4F6F9;
+    padding: 100px 15px;
+
+    h2 {
+        color: #4F963E;
+        margin-bottom: 40px;
+    }
+
+    .cont {
+        position: relative;
+        .btn-sw-prev, .btn-sw-next {
+            top: 42%;
+        }
+    
+    }
+
+    a.button_2 {
+        margin-top: 40px;
+        max-width: 330px;
+    }
+}
+
+.licenzSwiper {
+
+    .swiper-slide {
+        width: 300px;
+    }
+
+    img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    img:hover {
+        transition: .5s;
+        transform: scale(1.05);
+    }
+}
+    
+@media (max-width: 1460px) {
+    .licenz .cont .btn-sw-prev, .licenz .cont .btn-sw-next {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .licenz {
+        padding: 50px 15px;
+    }
+    .licenz h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .licenz a.button_2 {
+        margin-top: 20px;
+    }
+}

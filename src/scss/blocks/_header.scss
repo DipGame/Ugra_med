@@ -109,7 +109,7 @@ header .contacts_cont {
 }
 
 .eye:hover {
-    background-color: #4F963E;
+    background-color: #18181A;
 
     path {
         fill: #FFF;
@@ -141,6 +141,18 @@ header .contacts_cont {
         li {
             cursor: pointer;
         }
+
+        @media (min-width: 991px) {
+            li li {
+                padding: 10px 0;
+                border-bottom: 1px solid #d6d6d6;
+            }
+
+            li li:last-of-type {
+                border: none;
+            }
+        }
+
 
         li a {
             font-family: Golos;
@@ -247,6 +259,8 @@ header .contacts_cont {
 
     .search {
         position: relative;
+        width: 100%;
+        max-width: 300px;
 
         .search_rez {
             transition: .5s;
@@ -280,6 +294,10 @@ header .contacts_cont {
 
                     border-bottom: 1px solid #d6d6d6;
                 }
+
+                li:last-of-type {
+                    border: none;
+                }
             }
         }
 
@@ -311,6 +329,8 @@ header .contacts_cont {
                 font-weight: 400;
                 line-height: 19.2px;
                 text-align: left;
+                width: 100%;
+                max-width: 100%;
             }
 
             input::placeholder {
@@ -370,6 +390,7 @@ header .contacts_cont {
         width: 100%;
         gap: 20px;
         align-items: center;
+        max-width: none;
 
         .close_svg {
             display: block;
@@ -751,5 +772,44 @@ header .contacts_cont {
         path {
             fill: #FFF;
         }
+    }
+}
+
+@media (min-width: 991px) {
+    .bottom_header_container .menu .drop_menu {
+        min-width: 220px;
+        max-width: 220px;
+        padding: 30px;
+    }
+
+    .bottom_header_container .menu li li {
+        padding: 15px 0;
+
+        a {
+            font-family: Golos;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.4px;
+            text-align: left;
+        }
+    }
+}
+
+.search {
+
+    .cont_32 {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .clear-btn {
+        min-width: 18px;
+        min-height: 18px;
+        cursor: pointer;
+    }
+
+    .clear-btn:hover {
+        opacity: .6;
     }
 }
