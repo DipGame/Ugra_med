@@ -45,6 +45,14 @@ h2 {
 	word-wrap: break-word;
 }
 
+h1.title {
+	color: #4F963E;
+	width: 100%;
+	max-width: 1320px;
+	padding: 0 15px;
+	margin: 0 auto 40px;
+}
+
 @media (max-width: 600px) {
 
 	h1,
@@ -87,6 +95,7 @@ a:hover {
 main {
 	padding: 0;
 	margin: 0;
+	position: relative;
 }
 
 .padding {
@@ -159,6 +168,7 @@ main {
 		transition: .5s;
 	}
 }
+
 .button_2:hover {
 	background: #51AE3B;
 	color: #FFF !important;
