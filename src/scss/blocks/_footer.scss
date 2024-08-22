@@ -286,7 +286,7 @@ footer {
     }
 
     footer .footer_cont_2 .cont_1 {
-        gap: 0 20px;
+        gap: 0;
     }
 
     .footer_menu_cont,
@@ -333,4 +333,25 @@ footer {
         text-align: left;
     }
 
+    
+
+}
+
+@media (min-width: 345px) and (max-width: 450px){
+    .footer_menu_cont.v2 {
+        width: 50%;
+    }
+
+    .footer_menu_cont.v2:nth-of-type(2) {
+        padding-top: 0;
+        
+        .footer_menu {
+            // padding-left: 15px;
+            padding-right: 0;
+        }
+    }
+
+    .footer_menu {
+        padding-right: 15px;
+    }
 }

@@ -1,0 +1,105 @@
+.doc_card {
+    padding-bottom: 60px;
+    display: flex;
+    gap: 30px;
+
+    img {
+        max-width: 300px;
+        max-height: 370px;
+        min-width: 300px;
+        min-height: 370px;
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .title_cont {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+            li {
+                padding: 10px 15px;
+                background-color: #FAF9FF;
+                font-family: Golos;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 19.2px;
+                text-align: left;
+                border-radius: 10px;
+            }
+        }
+
+        p {
+            font-family: Golos;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22.4px;
+            text-align: left;
+            margin-bottom: 20px;
+
+            span {
+                font-family: Golos;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22.4px;
+                text-align: left;
+                color: #717179;
+            }
+        }
+
+        .button {
+            margin-top: auto;
+            height: 60px;
+            max-width: 230px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .doc_card {
+        flex-direction: column;
+    }
+
+    .doc_card img {
+        max-width: 500px;
+        max-height: 620px;
+        min-width: 500px;
+        min-height: 620px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .doc_card {
+        padding-bottom: 50px;
+        margin-top: -30px;
+    }
+    .doc_card img {
+        max-width: 300px;
+        max-height: 370px;
+        min-width: 300px;
+        min-height: 370px;
+    }
+    .doc_card .title_cont .button {
+        max-width: none;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 350px) {
+    .doc_card img {
+        max-width: 270px;
+        max-height: 340px;
+        min-width: 270px;
+        min-height: 340px;
+    }
+}

@@ -11,6 +11,10 @@
 	<link rel="stylesheet" href="./css/jquery.fancybox.css" />
 	<link rel="stylesheet" href="./css/swiper-bundle.css" />
 	<link rel="stylesheet" href="./css/main.css" />
+
+	<script src="./js/jquery-3.7.1.min.js"></script>
+	<script src="./js/jquery.fancybox.js"></script>
+	<script src="./js/swiper-bundle.js"></script>
 </head>
 
 <body>
@@ -33,6 +37,8 @@
             Мы свяжемся с вами в самое ближайшее время
         </p>
         <div class="inputs_cont">
+            <input type="hidden" name="data-name">
+            <input type="hidden" name="data-spec">
             <div class="input_cont">
                 <input type="text" name="name" placeholder="Ваше имя">
             </div>
@@ -68,7 +74,7 @@
 	<header class="flex">
     <div class="header_container flex padding">
         <div class="top_header_container def_div">
-            <a href="/">
+            <a href="/" class="logo_link">
                 <img class="logo" src="./img/logo.png" alt="logo">
             </a>
 
@@ -596,7 +602,7 @@
     </div>
 </section>
 		<section class="flex padding">
-    <div class="services def_div">
+    <div class="services def_div " data-invise="8">
         <h2>
             Услуги центра
         </h2>
@@ -710,17 +716,25 @@
                 </h3>
             </a>
         </div>
+        <a class="button button_2" id="btn-all-card">
+            Показать еще
+            <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.5 11.8906L7.12836 17.2635C7.04505 17.3482 6.93586 17.3906 6.82667 17.3906M1.5 11.8906L6.52497 17.2635C6.60828 17.3482 6.71747 17.3906 6.82667 17.3906M6.82667 17.3906L6.82667 1.39062"
+                    stroke="#4F963E" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </a>
     </div>
 </section> 
 		<section class="flex padding">
-    <div class="specials def_div">
-        
+    <div class="specials def_div specials_list" data-invise="8">
+
         <h2>
             Специальности
         </h2>
         <div class="specials__cont">
             <ul>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -730,7 +744,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -740,7 +754,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -750,7 +764,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -760,7 +774,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -770,7 +784,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -780,7 +794,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -790,7 +804,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -800,10 +814,10 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Функциональная диагностика
-    
+
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.5 1L16.8728 6.37164C16.9576 6.45495 17 6.56414 17 6.67333M11.5 12L16.8728 6.97503C16.9576 6.89172 17 6.78253 17 6.67333M17 6.67333H1"
@@ -811,7 +825,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -821,7 +835,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -831,7 +845,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -841,7 +855,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -851,7 +865,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -861,7 +875,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -871,7 +885,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -881,7 +895,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -891,10 +905,10 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Функциональная диагностика
-    
+
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.5 1L16.8728 6.37164C16.9576 6.45495 17 6.56414 17 6.67333M11.5 12L16.8728 6.97503C16.9576 6.89172 17 6.78253 17 6.67333M17 6.67333H1"
@@ -902,7 +916,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -912,7 +926,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -922,10 +936,10 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Ультрозвуковая диагностика
-    
+
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11.5 1L16.8728 6.37164C16.9576 6.45495 17 6.56414 17 6.67333M11.5 12L16.8728 6.97503C16.9576 6.89172 17 6.78253 17 6.67333M17 6.67333H1"
@@ -933,7 +947,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -943,7 +957,7 @@
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class='card'>
                     <a class="smooth" href="">
                         Венерология
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -954,6 +968,14 @@
                     </a>
                 </li>
             </ul>
+            <a class="button button_2" id="btn-all-card">
+                Показать еще
+                <svg width="14" height="19" viewBox="0 0 14 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.5 11.8906L7.12836 17.2635C7.04505 17.3482 6.93586 17.3906 6.82667 17.3906M1.5 11.8906L6.52497 17.2635C6.60828 17.3482 6.71747 17.3906 6.82667 17.3906M6.82667 17.3906L6.82667 1.39062"
+                        stroke="#4F963E" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </a>
         </div>
         
     </div>
@@ -989,7 +1011,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1002,7 +1025,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1011,7 +1034,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="fffdfs Ольга
+                    Николаевна" data-spec="Неврgfdggfdолог">
                         Записаться
                     </a>
                 </div>
@@ -1024,7 +1048,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1033,7 +1057,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1046,7 +1071,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1055,7 +1080,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1068,7 +1094,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1077,7 +1103,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1090,7 +1117,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1099,7 +1126,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1112,7 +1140,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1121,7 +1149,8 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
@@ -1134,7 +1163,7 @@
 
                     <div class="sub_info">
                         <p>
-                            Главврач, Рентгенолог, Врач УЗИ
+                            Главврач, Рентгенолог, Врач УЗИ Главврач, Рентгенолог, Врач УЗИ
                         </p>
                         <p>
                             <span>
@@ -1143,54 +1172,12 @@
                             10 лет
                         </p>
                     </div>
-                    <a class="button btn_pop">
+                    <a class="button btn_pop" data-check="doc" data-name="Кучер Ольга
+                    Николаевна" data-spec="Невролог">
                         Записаться
                     </a>
                 </div>
-                <div class="swiper-slide">
-                    <img src="./img/foto_1.png" alt="foto">
-                    <a class="title">
-                        Кучер Ольга
-                        Николаевна
-                    </a>
-
-                    <div class="sub_info">
-                        <p>
-                            Главврач, Рентгенолог, Врач УЗИ
-                        </p>
-                        <p>
-                            <span>
-                                Стаж работы:
-                            </span>
-                            10 лет
-                        </p>
-                    </div>
-                    <a class="button btn_pop">
-                        Записаться
-                    </a>
-                </div>
-                <div class="swiper-slide">
-                    <img src="./img/foto_1.png" alt="foto">
-                    <a class="title">
-                        Кучер Ольга
-                        Николаевна
-                    </a>
-
-                    <div class="sub_info">
-                        <p>
-                            Главврач, Рентгенолог, Врач УЗИ
-                        </p>
-                        <p>
-                            <span>
-                                Стаж работы:
-                            </span>
-                            10 лет
-                        </p>
-                    </div>
-                    <a class="button btn_pop">
-                        Записаться
-                    </a>
-                </div>
+                
 
             </div>
 
@@ -1413,49 +1400,49 @@
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
                 </div>
                 <div class="swiper-slide">
-                    <a href="./img/img_2.png" data-fancybox="image-gallery">
+                    <a href="./img/img_2.png" data-fancybox="image-licenz">
                         <img src="./img/img_2.png" alt="img">
                     </a>
                     
@@ -1723,7 +1710,7 @@
     <div class="footer_cont_2">
         <div class="def_div">
             <div class="cont_1">
-                <div class="footer_menu_cont">
+                <div class="footer_menu_cont v2">
                     Центр
                     <ul class="footer_menu">
 
@@ -1759,7 +1746,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="footer_menu_cont">
+                <div class="footer_menu_cont v2">
                     Информация
                     <ul class="footer_menu">
 
@@ -1990,9 +1977,7 @@
         </div>
     </div>
 </footer>
-	<script src="./js/jquery-3.7.1.min.js"></script>
-	<script src="./js/jquery.fancybox.js"></script>
-	<script src="./js/swiper-bundle.js"></script>
+	
 	<script src="./js/copyEl.js"></script>
 	<script src="./js/index.js"></script>
 </body>

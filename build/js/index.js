@@ -1,10 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    Fancybox.bind('[data-fancybox="image-gallery"]', {
-        // Custom options
-      }); 
+    if (document.getElementById("cont_anons")) {
+        const contAns = document.getElementById("cont_anons");
+        const cardAns = contAns.querySelector(".hidd_card");
+        const btnOpenAllText = contAns.querySelector("#all-open");
+        const btnCloseAllText = contAns.querySelector("#all-close");
 
-      jQuery(($) => {
+        btnOpenAllText.addEventListener('click', () => {
+
+            toggleClass(btnOpenAllText, 'invise');
+            toggleClass(btnCloseAllText, 'invise');
+            toggleClass(cardAns, 'invise');
+        })
+        btnCloseAllText.addEventListener('click', () => {
+            toggleClass(btnOpenAllText, 'invise');
+            toggleClass(btnCloseAllText, 'invise');
+            toggleClass(cardAns, 'invise');
+        })
+    }
+
+    $('[data-fancybox]').fancybox({
+        helpers     : {
+            overlay : {
+                closeClick: true
+            }
+        },
+
+    });
+
+    jQuery(($) => {
         $('.select').on('click', '.select__head', function () {
             if ($(this).hasClass('open')) {
                 $(this).removeClass('open');
@@ -16,14 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 $(this).next().fadeIn();
             }
         });
-    
+
         $('.select').on('click', '.select__item', function () {
             $('.select__head').removeClass('open');
             $(this).parent().fadeOut();
             $(this).parent().prev().text($(this).text());
             $(this).parent().prev().prev().val($(this).text());
         });
-    
+
         $(document).click(function (e) {
             if (!$(e.target).closest('.select').length) {
                 $('.select__head').removeClass('open');
@@ -32,6 +56,28 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    $(function () {
+        $('input[type="text"]').keyup(function () {
+            sergey = $(this).val().toLowerCase(), spout = 'http,https,url,.ru,.com,.net,.tk,php,.ucoz,www,.ua,.tv,.info,.org,.su,.ру,.су,.ком,.инфо,//'.split(',');
+            for (litvinov = 0; litvinov < spout.length; litvinov++) {
+                if (sergey.search(spout[litvinov]) != -1) {
+                    $(this).val(sergey.replace(spout[litvinov], '[Запрещено]'));
+                    return true;
+                }
+            }
+        });
+    });
+
+    let swiperAbout = new Swiper(".swiperAbout", {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        breakpoints: {
+            1212: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        }
+    });
     let banerSwiper = new Swiper(".banerSwiper", {
         autoplay: {
             delay: 5000,
@@ -59,6 +105,29 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             1350: {
                 slidesPerView: 1000,
+                spaceBetween: 30
+            }
+        }
+    });
+    let companyesSwiper = new Swiper(".companyesSwiper", {
+        loop: true,
+        freeMode: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 1,
+          disableOnInteraction: true
+        },
+        speed: 5000,
+        freeModeMomentum: false,
+
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: ".companyesSwiper-button-next",
+            prevEl: ".companyesSwiper-button-prev",
+        },
+        breakpoints: {
+            1350: {
                 spaceBetween: 30
             }
         }
@@ -164,10 +233,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-        clearBtnInput.addEventListener('click', () => { 
+        clearBtnInput.addEventListener('click', () => {
             clearBtnInput.setAttribute("display", "none");
             searchDeskInput.value = '';
-         })
+        })
 
         openSearchBtn.addEventListener('click', () => {
             addClass(topMenu, 'invise');
@@ -247,11 +316,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (document.querySelector('.btn_pop')) {
             const btnPopAdd = document.querySelectorAll('.btn_pop')
-
+            var dataNameForForm = '';
+            var dataSpecForForm = '';
             btnPopAdd.forEach(element => {
                 element.addEventListener('click', () => {
                     addClass(overlay, 'open');
                     addClass(popupForm, 'open');
+                    if (element.getAttribute('data-check') == 'doc') {
+
+                        dataNameForForm = element.getAttribute('data-name');
+                        dataSpecForForm = element.getAttribute('data-spec');
+
+                    } else {
+                        dataNameForForm = '';
+                        dataSpecForForm = '';
+                    }
+                    let dataNameHiddenInp = popupForm.querySelector("[name='data-name']");
+                    let dataSpecHiddenInp = popupForm.querySelector("[name='data-spec']");
+
+                    dataNameHiddenInp.value = dataNameForForm.trim();
+                    dataSpecHiddenInp.value = dataSpecForForm.trim();
                 })
             });
         }
@@ -262,12 +346,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const formSect = document.querySelectorAll(".form-all");
         const titlePopupCheck = popupCheck.querySelector('h2');
         formSect.forEach(formSect => {
-           
-            
+
+
             let form = formSect.querySelector("form");
             let formBtn = formSect.querySelector("[type='submit']");
             let nameInp = formSect.querySelector("[name='name']");
             let phoneInp = formSect.querySelector("[name='phone']");
+
 
             window.addEventListener("DOMContentLoaded", function () {
                 [].forEach.call(document.querySelectorAll("[name='phone']"), function (input) {
@@ -309,17 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
-            $(function () {
-                $(nameInp).keyup(function () {
-                    sergey = $(this).val().toLowerCase(), spout = 'http://,https,url,.ru,.com,.net,.tk,php,.ucoz,www,.ua,.tv,.info,.org,.su,.ру,.су,.ком,.инфо,//'.split(',');
-                    for (litvinov = 0; litvinov < spout.length; litvinov++) {
-                        if (sergey.search(spout[litvinov]) != -1) {
-                            $(this).val(sergey.replace(spout[litvinov], '[Запрещено]'));
-                            return true;
-                        }
-                    }
-                });
-            });
+
 
             function checkInputsValid(input, num) {
                 if (input.value.length < num) {
@@ -426,10 +501,263 @@ document.addEventListener("DOMContentLoaded", function () {
                     //             })
                     //     });
                     // });
+                    let formData = new FormData(form);
+                    console.log(formData);
+
                     handleTextGood();
                 }
             })
         });
+    }
+
+    if (document.querySelector('[data-invise]')) {
+
+        const sectDataInvise = document.querySelectorAll('[data-invise]');
+        sectDataInvise.forEach(sect => {
+            let btnMore = sect.querySelector('#btn-all-card');
+            let dataInvise = sect.getAttribute('data-invise');
+
+            let cards = sect.querySelectorAll('.card');
+            let num = 0;
+
+            if (sect.getAttribute('data-invise-desc')) {
+                let dataInvisedesc = sect.getAttribute('data-invise-desc');
+                if (window.screen.width > 879) {
+
+                    cards.forEach(element => {
+
+                        if (sect.classList.contains('specials_list')) {
+                            if (num == 0) {
+                                addClass(element, 'v2');
+                            } else if (num == dataInvisedesc / 2 - 1) {
+                                addClass(element, 'v3');
+                            } else if (num == dataInvisedesc / 2) {
+                                addClass(element, 'v2');
+                            } else if (num == dataInvisedesc - 1) {
+                                addClass(element, 'v3');
+                            }
+                        }
+
+                        if (num > dataInvisedesc - 1) {
+                            addClass(element, 'invise_2');
+                        }
+                        num++;
+                    });
+
+                    let num_4 = 7;
+                    btnMore.addEventListener('click', () => {
+
+                        if (sect.querySelector('.invise_2')) {
+                            let num_2 = 0;
+                            cards.forEach(element => {
+                                if (element.classList.contains('invise_2')) {
+                                    if (num_2 < 6) {
+                                        removeClass(element, 'invise_2');
+                                        if (!sect.querySelector('.invise_2')) {
+                                            addClass(btnMore, 'invise');
+                                        }
+                                    } else {
+                                        if (!sect.querySelector('.invise_2')) {
+                                            addClass(btnMore, 'invise');
+                                        }
+                                    }
+                                    num_2++;
+                                }
+                            });
+                        } else {
+                            addClass(btnMore, 'invise');
+                        }
+
+
+                        if (sect.classList.contains('specials_list')) {
+                            let num_3 = 0;
+                            let sectListUl = sect.querySelector('ul');
+                            cards.forEach(element => {
+                                sectListUl.setAttribute("style", `grid-template-rows: repeat(${num_4}, auto);`);
+                                if (num_3 != 0) {
+                                    removeClass(element, 'v2');
+                                    removeClass(element, 'v3');
+                                }
+
+                                if (num_3 == num_4 - 1) {
+                                    addClass(element, 'v3');
+                                } else if (num_3 == num_4) {
+                                    addClass(element, 'v2');
+                                } else if (num_3 == num_4 * 2 - 1) {
+                                    addClass(element, 'v3');
+                                }
+                                num_3++;
+                            });
+                        }
+
+                        num_4 = num_4 + 3;
+
+
+                    })
+
+                } else {
+                    cards.forEach(element => {
+
+                        if (sect.classList.contains('specials_list')) {
+                            if (num == 0) {
+                                addClass(element, 'v2');
+                            } else if (num == dataInvise / 2 - 1) {
+                                addClass(element, 'v3');
+                            } else if (num == dataInvise / 2) {
+                                addClass(element, 'v2');
+                            } else if (num == dataInvise - 1) {
+                                addClass(element, 'v3');
+                            }
+                        }
+
+                        if (num > dataInvise - 1) {
+                            addClass(element, 'invise_2');
+                        }
+                        num++;
+                    });
+
+                    let num_4 = 7;
+                    btnMore.addEventListener('click', () => {
+
+                        if (sect.querySelector('.invise_2')) {
+                            let num_2 = 0;
+                            cards.forEach(element => {
+                                if (element.classList.contains('invise_2')) {
+                                    if (num_2 < 6) {
+                                        removeClass(element, 'invise_2');
+                                        if (!sect.querySelector('.invise_2')) {
+                                            addClass(btnMore, 'invise');
+                                        }
+                                    } else {
+                                        if (!sect.querySelector('.invise_2')) {
+                                            addClass(btnMore, 'invise');
+                                        }
+                                    }
+                                    num_2++;
+                                }
+                            });
+                        } else {
+                            addClass(btnMore, 'invise');
+                        }
+
+
+                        if (sect.classList.contains('specials_list')) {
+                            let num_3 = 0;
+                            let sectListUl = sect.querySelector('ul');
+                            cards.forEach(element => {
+                                sectListUl.setAttribute("style", `grid-template-rows: repeat(${num_4}, auto);`);
+                                if (num_3 != 0) {
+                                    removeClass(element, 'v2');
+                                    removeClass(element, 'v3');
+                                }
+
+                                if (num_3 == num_4 - 1) {
+                                    addClass(element, 'v3');
+                                } else if (num_3 == num_4) {
+                                    addClass(element, 'v2');
+                                } else if (num_3 == num_4 * 2 - 1) {
+                                    addClass(element, 'v3');
+                                }
+                                num_3++;
+                            });
+                        }
+
+                        num_4 = num_4 + 3;
+
+
+                    })
+                }
+            } else {
+
+                cards.forEach(element => {
+
+                    if (sect.classList.contains('specials_list')) {
+                        if (num == 0) {
+                            addClass(element, 'v2');
+                        } else if (num == dataInvise / 2 - 1) {
+                            addClass(element, 'v3');
+                        } else if (num == dataInvise / 2) {
+                            addClass(element, 'v2');
+                        } else if (num == dataInvise - 1) {
+                            addClass(element, 'v3');
+                        }
+                    }
+
+                    if (num > dataInvise - 1) {
+                        addClass(element, 'invise_2');
+                    }
+                    num++;
+                });
+
+                let num_4 = 7;
+                btnMore.addEventListener('click', () => {
+
+                    if (sect.querySelector('.invise_2')) {
+                        let num_2 = 0;
+                        cards.forEach(element => {
+                            if (element.classList.contains('invise_2')) {
+                                if (num_2 < 6) {
+                                    removeClass(element, 'invise_2');
+                                    if (!sect.querySelector('.invise_2')) {
+                                        addClass(btnMore, 'invise');
+                                    }
+                                } else {
+                                    if (!sect.querySelector('.invise_2')) {
+                                        addClass(btnMore, 'invise');
+                                    }
+                                }
+                                num_2++;
+                            }
+                        });
+                    } else {
+                        addClass(btnMore, 'invise');
+                    }
+
+
+                    if (sect.classList.contains('specials_list')) {
+                        let num_3 = 0;
+                        let sectListUl = sect.querySelector('ul');
+                        cards.forEach(element => {
+                            sectListUl.setAttribute("style", `grid-template-rows: repeat(${num_4}, auto);`);
+                            if (num_3 != 0) {
+                                removeClass(element, 'v2');
+                                removeClass(element, 'v3');
+                            }
+
+                            if (num_3 == num_4 - 1) {
+                                addClass(element, 'v3');
+                            } else if (num_3 == num_4) {
+                                addClass(element, 'v2');
+                            } else if (num_3 == num_4 * 2 - 1) {
+                                addClass(element, 'v3');
+                            }
+                            num_3++;
+                        });
+                    }
+
+                    num_4 = num_4 + 3;
+
+
+                })
+
+            }
+
+
+        })
+
+
+    }
+
+    if (document.querySelector('.menu_list')) {
+        const menuList = document.querySelector('.menu_list');
+        const menuLi = menuList.querySelectorAll('.menu_first.drop');
+        menuLi.forEach(element => {
+            element.addEventListener('click', () => {
+                toggleClass(element, 'open');
+            })
+        });
+
+
     }
 
 });

@@ -1,0 +1,153 @@
+.how_zab {
+    background-color: #F4F6F9;
+    padding: 80px 15px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        color: #4F963E;
+        margin-bottom: 40px;
+    }
+
+    .cont_1 {
+        margin-bottom: 60px;
+        gap: 30px;
+        display: flex;
+        flex-direction: row;
+
+
+        ul {
+            width: 100%;
+            max-width: 410px;
+            padding: 50px 30px;
+            background-color: #FFF;
+            border-radius: 10px;
+            gap: 30px;
+
+            li {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+
+            li::before {
+                min-width: 12px;
+                min-height: 12px;
+                max-width: 12px;
+                max-height: 12px;
+                content: '';
+                background-image: url('./../img/marker_1.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    .all-cards {
+        font-family: Golos;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22.4px;
+        text-align: left;
+        color: #4F963E;
+        border-bottom: 1px dashed #4F963E;
+        display: inline-block;
+        cursor: pointer;
+        transition: .5s;
+        width: max-content;
+        text-decoration: none;
+    }
+
+    .all-cards:hover {
+        color: #51AE3B;
+        border-bottom: 1px dashed #51AE3B;
+        transition: .5s;
+    }
+}
+
+#cont_anons {
+
+    margin-bottom: 0;
+
+    .anons {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hidd_card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    span {
+        font-family: Golos;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25.2px;
+        text-align: left;
+        color: #4F963E;
+        border-bottom: 1px dashed #4F963E;
+        display: inline-block;
+        cursor: pointer;
+        transition: .5s;
+        width: max-content;
+    }
+
+    span:hover {
+        color: #51AE3B;
+        border-bottom: 1px dashed #51AE3B;
+        transition: .5s;
+    }
+}
+
+@media (max-width: 938px) {
+    .how_zab .cont_1 {
+        flex-wrap: wrap;
+    }
+
+    .how_zab .cont_1 ul {
+        max-width: none;
+    }
+}
+
+@media (min-width: 601px) {
+    .how_zab .all-cards {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .how_zab {
+        padding: 40px 15px;
+    }
+
+    .how_zab h2 {
+        font-family: Golos;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    .how_zab .cont_1 ul.invise_2 {
+        display: none;
+    }
+
+    .how_zab .cont_1 ul {
+        padding: 40px 30px;
+    }
+
+    .how_zab .cont_1 {
+        margin-bottom: 50px;
+    }
+
+    #cont_anons span {
+        font-family: Golos;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22.4px;
+        text-align: left;
+    }
+}

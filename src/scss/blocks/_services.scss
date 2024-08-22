@@ -6,6 +6,20 @@
         margin-bottom: 40px;
     }
 
+    .card.invise_2 {
+        display: flex;
+    }
+
+    a.button_2 {
+        font-family: Golos;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16.8px;
+        text-align: center;
+        max-width: 190px;
+        display: none;
+    }
+
     .grid {
         display: grid;
         grid-gap: 30px;
@@ -49,7 +63,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
     .services .grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -76,6 +90,14 @@
     .services {
         margin-bottom: 50px;
         gap: 30px;
+
+        .card.invise_2 {
+            display: none;
+        } 
+
+        a.button_2 {
+            display: flex;
+        }
     }
 
     .services {

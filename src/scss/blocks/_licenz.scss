@@ -16,9 +16,15 @@
     }
 
     a.button_2 {
+        margin: 0 auto;
         margin-top: 40px;
         max-width: 330px;
     }
+}
+
+.licenz.v2 {
+    background: none;
+    padding-bottom: 0;
 }
 
 .licenzSwiper {
@@ -59,4 +65,11 @@
     .licenz a.button_2 {
         margin-top: 20px;
     }
+
+    .licenz.v2 {
+        background: #F4F6F9;
+        margin-top: 60px;
+        padding-bottom: 50px;
+    }
+
 }

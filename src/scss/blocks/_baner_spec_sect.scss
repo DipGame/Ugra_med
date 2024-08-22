@@ -1,0 +1,161 @@
+.baner_spec {
+    padding-top: 125px;
+    padding-bottom: 100px;
+    background-position: 87% 100%;
+    background-size: contain;
+
+    @media (min-width: 1921px) {
+        background-position: 75% 100%;
+    }
+
+    h1 {
+        margin: 0;
+        margin-bottom: 0;
+        padding: 0;
+        max-width: 630px;
+    }
+
+    #btn-all-card {
+        display: none;
+    }
+    
+
+    .cont {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .cont_32 {
+
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            width: 100%;
+            max-width: 630px;
+
+            p {
+                font-family: Golos;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22.4px;
+                text-align: left;
+                max-width: 475px;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                li {
+                    font-family: Golos;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 22.4px;
+                    text-align: left;
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                }
+
+                li::before {
+                    display: block;
+                    content: '';
+                    width: 12px;
+                    min-width: 12px;
+                    min-height: 12px;
+                    max-width: 12px;
+                    max-height: 12px;
+                    background-color: #4F963E;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+
+
+        .cont_2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            span {
+                font-family: Golos;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 33.6px;
+                text-align: left;
+
+            }
+
+            .button {
+                max-width: 290px;
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1410px) {
+    .baner_spec {
+        background-position: 162% 100%;
+    }
+}
+
+@media (max-width: 1145px) {
+    .baner_spec {
+        background-size: 0 0;
+    }
+
+    .baner_spec .cont {
+        max-width: none;
+
+        .cont_32 {
+            max-width: none;
+
+            p {
+                max-width: none;
+            }
+        }
+
+
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .baner_spec .cont .cont_32 ul li {
+        font-family: Golos;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        text-align: left;
+    }
+
+    .baner_spec {
+        padding-bottom: 60px;
+        padding-top: 100px;
+        #btn-all-card {
+            display: block;
+            font-family: Golos;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22.4px;
+            text-align: left;
+            color: #4F963E;
+            border-bottom: 1px dashed #4F963E;
+            width: max-content;
+        }
+    }
+
+    
+
+
+    .baner_spec .cont .cont_32 ul li.invise_2 {
+        display: none;
+      
+    }
+}
