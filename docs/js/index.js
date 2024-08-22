@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     $('[data-fancybox]').fancybox({
-        helpers     : {
-            overlay : {
+        helpers: {
+            overlay: {
                 closeClick: true
             }
         },
@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
         freeMode: true,
         grabCursor: true,
         autoplay: {
-          delay: 1,
-          disableOnInteraction: true
+            delay: 1,
+            disableOnInteraction: true
         },
         speed: 5000,
         freeModeMomentum: false,
@@ -318,6 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const btnPopAdd = document.querySelectorAll('.btn_pop')
             var dataNameForForm = '';
             var dataSpecForForm = '';
+            var dataServiceForForm = '';
             btnPopAdd.forEach(element => {
                 element.addEventListener('click', () => {
                     addClass(overlay, 'open');
@@ -327,15 +328,19 @@ document.addEventListener("DOMContentLoaded", function () {
                         dataNameForForm = element.getAttribute('data-name');
                         dataSpecForForm = element.getAttribute('data-spec');
 
+                    } else if (element.getAttribute('data-check') == 'service') {
+                        dataServiceForForm = element.getAttribute('data-service-name');
                     } else {
                         dataNameForForm = '';
                         dataSpecForForm = '';
                     }
                     let dataNameHiddenInp = popupForm.querySelector("[name='data-name']");
                     let dataSpecHiddenInp = popupForm.querySelector("[name='data-spec']");
+                    let dataServiceHiddenInp = popupForm.querySelector("[name='data-service']");
 
                     dataNameHiddenInp.value = dataNameForForm.trim();
                     dataSpecHiddenInp.value = dataSpecForForm.trim();
+                    dataServiceHiddenInp.value = dataServiceForForm.trim();
                 })
             });
         }
@@ -501,8 +506,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     //             })
                     //     });
                     // });
-                    let formData = new FormData(form);
-                    console.log(formData);
+                    form.querySelectorAll('input').forEach(inp => {
+                        console.log(inp.value.trim());
+
+                    });
 
                     handleTextGood();
                 }
