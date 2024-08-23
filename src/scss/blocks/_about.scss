@@ -129,6 +129,12 @@
             width: 100%;
             height: auto;
         }
+
+        
+    }
+    
+    .aboutSwiper {
+        display: none;
     }
 }
 
@@ -141,5 +147,15 @@
 
     .about {
         padding: 50px 0;
+
+        .default {
+            padding: 0;
+            margin: 0;
+        }
+
+       
+    }
+    .about .cont_2 a.button {
+        margin: 30px auto 0;
     }
 }

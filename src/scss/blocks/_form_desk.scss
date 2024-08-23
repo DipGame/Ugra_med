@@ -178,7 +178,7 @@
     }
 
     .deskForm__container img {
-        width: 336px;
+        width: 306px;
         height: auto;
         right: -100px;
     }
@@ -191,5 +191,11 @@
         font-weight: 500;
         line-height: 48px;
         text-align: left;
+    }
+}
+
+@media (max-width: 375px) {
+    .deskForm__container img {
+        width: 336px;
     }
 }
